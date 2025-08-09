@@ -168,6 +168,70 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Profile Header with Photo and Social Links */
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    color: #4a5568;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #3182ce;
+    border-color: #3182ce;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* Modern Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
@@ -383,6 +447,23 @@ li {
         padding: 0 0.5rem;
         width: 100% !important;
         margin-bottom: 1rem;
+    }
+    
+    /* Mobile profile layout */
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .profile-photo img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .social-links {
+        justify-content: center;
     }
 }
 
