@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Roadmap for AI in Robotics - Reading Notes | Siyang Liu</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="This perspective paper provides a roadmap for integrating AI into robotics, addressing both short-term and long-term challenges. The authors assess AI's achievements in robotics since the 1990s and pr..." />
+    <meta name="keywords" content="AI in robotics, embodied AI, robot learning, human-robot interaction, research notes, academic analysis, lifelong learning, sim-to-real transfer, data collection, generative models" />
+    <meta name="author" content="Siyang Liu" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="A Roadmap for AI in Robotics - Reading Notes" />
+    <meta property="og:description" content="This perspective paper provides a roadmap for integrating AI into robotics, addressing both short-term and long-term challenges. The authors assess AI's achievements in robotics since the 1990s and pr..." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://lsy641.github.io/notes/a-roadmap-for-ai-in-robotics---reading-notes.html" />
+    <meta property="og:image" content="https://lsy641.github.io/images/robotics-notes.jpg" />
+    <meta property="og:site_name" content="Siyang Liu's Academic Website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:author" content="Siyang Liu" />
+    <meta property="article:published_time" content="2025-08-08T21:42:54+00:00" />
+    <meta property="article:modified_time" content="2025-08-08T21:42:54+00:00" />
+    <meta property="article:section" content="Research Notes" />
+    <meta property="article:tag" content="AI in robotics" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Roadmap for AI in Robotics - Reading Notes" />
+    <meta name="twitter:description" content="This perspective paper provides a roadmap for integrating AI into robotics, addressing both short-term and long-term challenges. The authors assess AI's achievements in robotics since the 1990s and pr..." />
+    <meta name="twitter:image" content="https://lsy641.github.io/images/robotics-notes.jpg" />
+    <meta name="twitter:creator" content="@siyang_liu" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lsy641.github.io/notes/a-roadmap-for-ai-in-robotics---reading-notes.html" />
+    
+    <!-- Academic Profile Links -->
+    <link rel="author" href="https://scholar.google.com/citations?user=2OjUAPUAAAAJ" />
+    
+    <!-- Navigation Links -->
+    <link rel="up" href="https://lsy641.github.io/research-notes.html" />
+    <link rel="home" href="https://lsy641.github.io/" />
+    
+    
+    <!-- Structured Data for Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "A Roadmap for AI in Robotics - Reading Notes",
+        "description": "This perspective paper provides a roadmap for integrating AI into robotics, addressing both short-term and long-term challenges. The authors assess AI's achievements in robotics since the 1990s and pr...",
+        "image": "https://lsy641.github.io/images/robotics-notes.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "Siyang Liu",
+            "url": "https://lsy641.github.io/",
+            "jobTitle": "Ph.D. Student in Computer Engineering",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "University of Michigan"
+            },
+            "sameAs": [
+                "https://scholar.google.com/citations?user=2OjUAPUAAAAJ"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Siyang Liu's Academic Website",
+            "url": "https://lsy641.github.io/"
+        },
+        "datePublished": "2025-08-08T21:42:54+00:00",
+        "dateModified": "2025-08-08T21:42:54+00:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://lsy641.github.io/notes/a-roadmap-for-ai-in-robotics---reading-notes.html"
+        },
+        "about": [
+            {"@type": "Thing", "name": "AI in Robotics"}, {"@type": "Thing", "name": "Research Notes"}, {"@type": "Thing", "name": "Academic Analysis"}
+        ],
+        "keywords": "This perspective paper provides a roadmap for integrating AI into robotics, addressing both short-term and long-term challenges. The authors assess AI's achievements in robotics since the 1990s and pr...",
+        "articleSection": "Research Notes",
+        "inLanguage": "en",
+        "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Research Notes",
+            "url": "https://lsy641.github.io/research-notes.html"
+        },
+        "mentions": [
+            {
+                "@type": "ScholarlyArticle",
+                "name": "A roadmap for AI in robotics",
+                "url": "https://www.nature.com/articles/s42256-025-01050-6",
+                "author": {
+                    "@type": "Person",
+                    "name": "Aude Billard et al.  <br>"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Nature Machine Intelligence  <br>"
+                },
+                "datePublished": "June 19, 2025  <br>"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Additional Structured Data for Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://lsy641.github.io/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Research Notes",
+                "item": "https://lsy641.github.io/research-notes.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Reading Notes",
+                "item": "https://lsy641.github.io/notes/"
+            }
+        ]
+    }
+    </script>
+    
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h1 { font-size: 2.2em; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { font-size: 1.8em; border-bottom: 1px solid #bdc3c7; padding-bottom: 5px; }
+        h3 { font-size: 1.4em; }
+        h4 { font-size: 1.2em; }
+        p { margin-bottom: 15px; }
+        ul, ol { margin-bottom: 15px; padding-left: 30px; }
+        li { margin-bottom: 5px; }
+        
+        /* Nested list styling */
+        ul ul, ol ul, ul ol, ol ol {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        
+        /* Make nested lists visually distinct */
+        li > ul, li > ol {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* Style for list items with nested content */
+        li:has(ul), li:has(ol) {
+            margin-bottom: 15px;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #555;
+            font-style: italic;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        strong { font-weight: bold; }
+        em { font-style: italic; }
+        hr {
+            border: none;
+            border-top: 1px solid #bdc3c7;
+            margin: 30px 0;
+        }
+        .paper-meta {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        .note-info {
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a {
+            color: #666;
+        }
+        .breadcrumb a:hover {
+            color: #3498db;
+        }
+        .navigation {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .navigation a {
+            margin-right: 15px;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+        .navigation a:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+        }
+        article {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            margin: 20px 0;
+        }
+        header {
+            margin-bottom: 30px;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://lsy641.github.io/">Home</a> &gt; 
+        <a href="https://lsy641.github.io/research-notes.html">Research Notes</a> &gt; 
+        Reading Notes
+    </nav>
+
+    <!-- Navigation Links -->
+    <div class="navigation">
+        <a href="https://lsy641.github.io/">← Back to Home</a>
+        <a href="https://lsy641.github.io/research-notes.html">← Back to Research Notes</a>
+    </div>
+
+    <article>
+
+        <h2>A Roadmap for AI in Robotics - Reading Notes</h2>
+
+<h2>About the Paper</h2>
+
+<strong>Paper:</strong> <a href="https://www.nature.com/articles/s42256-025-01050-6" rel="noopener" target="_blank">A roadmap for AI in robotics</a> <br>
+
+<strong>Authors:</strong> Aude Billard et al.  <br>
+
+<strong>Journal:</strong> Nature Machine Intelligence  <br>
+
+<strong>Published:</strong> June 19, 2025  <br>
+
+<strong>DOI:</strong> https://doi.org/10.1038/s42256-025-01050-6  <br>
+
+<p>This perspective paper provides a roadmap for integrating AI into robotics, addressing both short-term and long-term challenges. The authors assess AI's achievements in robotics since the 1990s and propose research directions for the future.</p>
+
+
+<h2>Key Points</h2>
+
+<h3>A Brief History</h3>
+
+<p>Robot research started in the 1960s. AI has been used in robotics since the 1990s.
+Two types of algorithms and data gathering:</p>
+
+<ol>
+<li><strong>Learning from demonstrations</strong>
+<ul>
+<li><strong>Convention:</strong> Expert demonstration data collection</li>
+<li><strong>Limitation:</strong> Hard to get large demonstration data</li>
+<li><strong>Improvement:</strong> 1. Learning from larger but suboptimal demonstrations 2. Active learning/behavioral cloning</li>
+</ul>
+</li>
+<li>Learning from larger but suboptimal demonstrations
+</li>
+<li>Active learning/behavioral cloning
+</li>
+<li><strong>Reinforcement learning</strong>
+<ul>
+<li><strong>Convention:</strong> Balance between exploitation and exploration</li>
+<li><strong>Limitation:</strong> Exploration is expensive and does not scale easily</li>
+<li><strong>Improvement:</strong> 1. Large-data learning 2. Ensure good prior knowledge (*) <em>I was told a viewpoint that LLMs provide good prior knowledge so RL finally works</em></li>
+</ul>
+</li>
+<li>Large-data learning
+</li>
+<li>Ensure good prior knowledge (*)
+</li>
+</ol>
+       <em>I was told a viewpoint that LLMs provide good prior knowledge so RL finally works</em>
+
+<h3>Applications</h3>
+
+<ol>
+<li>E-commerce warehouse robotics
+</li>
+<li>Autonomous driving
+</li>
+<li>Soft robotics (*)
+</li>
+</ol>
+   <em>I feel soft robotics has much more potential than hard robotics like quadrupeds and humanoids. But this direction is both interesting and challenging.</em>
+
+<h3>Short- and Medium-term Challenges</h3>
+
+<ol>
+<li><strong>Data collection challenge</strong>
+<ul>
+<li>Harm to humans (such as autonomous flying)</li>
+<li>Privacy (such as terrestrial navigation)</li>
+<li>Additional challenges when collecting scenario data requiring human interaction</li>
+<li>Efficiently utilizing robot-specific sensing data (like electromagnetic spectrum)</li>
+</ul>
+</li>
+<li><strong>Sim-to-real problem</strong>
+<ul>
+<li>Classic simulators: Algoryx, Bullet, Gazebo, IsaacSim, MuJoCo, RoboDK, Genesis. Guarantee good locomotion on complex terrains and object manipulation.</li>
+<li>Challenges: Cannot handle complex real environment conditions (such as contact forces and deformable surfaces)</li>
+<li>Promise: Real-time adaptation with small data</li>
+</ul>
+</li>
+<li><strong>Leveraging large generative models in robotics</strong>
+<ul>
+<li>Opportunity: Combining Internet-scale visual–language tasks and robotic trajectory data</li>
+<li>Challenge: Reasoning, logic, feasibility of planning</li>
+</ul>
+</li>
+<li><strong>Prior knowledge and combining AI with control methods</strong>
+<ul>
+<li>Such combination is crucial. They put an example as justification: "In aerial robotics, neither learning nor aerodynamics-based control alone can help solve the challenge of approximating the agility of birds' flight: coupling sensing and perception with the full body dynamic, allowing a drone to have instant reactions in flight and cancel perturbations, or on the contrary profit from the wind, efficiently combining flapping of wings and gliding (in the case of a winged drone) to save energy. These challenges will require a combination of learning for building improved aerodynamics models with control methods for guaranteeing flight stability." <em>(I need more time to think about how this example justifies the combination is necessary)</em></li>
+<li>Another justification is LLM hallucination. <em>(I don't know whether it is a valid justification for such combination. LLMs can still combine with real-time adaptive learning methods instead of control methods)</em></li>
+<li>Another justification is large models' low reasoning efficiency. They take more steps (reasoning) for an action, hard to achieve agility.</li>
+</ul>
+</li>
+</ol>
+
+<h3>Long-term Challenges</h3>
+
+<p>Continuously acquiring new knowledge is the most challenging, long-term promise since the 1990s.</p>
+
+<ol>
+<li><strong>Lifelong learning</strong>
+<ul>
+<li>Technical challenge: Requiring paradigm shift from input-output learning and expert systems to something new. In a new paradigm, how can we test and know the performance is good? How do we select things to forget and make room for learning new things?</li>
+<li>Regulatory issues: Verify an evolving system maintains the safety and reliability standards requested for market certification as its capabilities change with new learning. <em> Transfer learning ability: After 5 or 8 years of operation, a robot may have to mount a different gripper or a different motor. The acquired knowledge that allows the robots to pick up and manage different objects may not automatically transfer to a slightly modified platform. </em>(My thought: Humans don't change much of their organism structure through evolving, that is why our knowledge can be passed down and re-used. Should robots have such inheritance? Or at least create an abstractive structure shared by all robotics)*</li>
+</ul>
+</li>
+<li><strong>Transfer Learning</strong>
+<ul>
+<li>What to transfer</li>
+<li>How to transfer</li>
+<li>When to transfer</li>
+</ul>
+</li>
+<li><strong>Safe-exploration</strong>
+<ul>
+<li>Challenges: Dealing with incomplete observability, making live explorations, balance between efficiency and safety</li>
+</ul>
+</li>
+</ol>
+
+<p>---</p>
+
+<em>Notes by Siyang Liu - Last updated: August 007, 2025</em>
+
+
+        <footer>
+            <hr>
+            <p><em>Notes by Siyang Liu - Last updated: August 08, 2025</em></p>
+            <p><strong>Author:</strong> <a href="https://lsy641.github.io/">Siyang Liu</a> | <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=2OjUAPUAAAAJ" rel="noopener" target="_blank">Profile</a></p>
+        </footer>
+    </article>
+</body>
+</html>

@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the entire site
+# This is appropriate for an academic website where you want maximum visibility
+
+# Sitemap location
+Sitemap: https://lsy641.github.io/sitemap.xml
+
+# Crawl delay (optional - helps prevent overwhelming your server)
+Crawl-delay: 1
+
+# Specific rules for different user agents (optional)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to development files (if any)
+Disallow: /live_server.py
+Disallow: /simple_live_server.py
+Disallow: /start_dev_server.sh
+Disallow: /requirements.txt
