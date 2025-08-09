@@ -28,7 +28,7 @@ body {
 
 /* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -438,6 +438,16 @@ li {
 #footer h2,
 #footer section {
     display: none !important;
+}
+
+/* Hide mobile navigation elements */
+#navPanel, #titleBar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
 }
 
 /* Responsive Design */
