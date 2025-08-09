@@ -181,13 +181,15 @@ body {
 }
 
 .profile-photo img {
-    width: 120px;
-    height: 120px;
+    width: 120px !important;
+    height: 120px !important;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #e2e8f0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    max-width: 120px !important;
+    max-height: 120px !important;
 }
 
 .profile-photo img:hover {
@@ -230,6 +232,30 @@ body {
 .social-icon svg {
     width: 20px;
     height: 20px;
+}
+
+/* Force profile photo size */
+.profile-photo img[src*="profile"] {
+    width: 120px !important;
+    height: 120px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+}
+
+/* Force Google Scholar icon size */
+.social-icon img[src*="gscholar"] {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+}
+
+/* Override any inline styles for profile photo */
+img[src*="profile.jpg"] {
+    width: 120px !important;
+    height: 120px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
 }
 
 /* Modern Typography */
