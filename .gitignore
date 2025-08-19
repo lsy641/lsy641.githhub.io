@@ -1,0 +1,138 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Unused template files (from original template)
+onecolumn.html
+twocolumn1.html
+twocolumn2.html
+threecolumn.html
+
+# Unused assets
+assets/css/images/bg*.jpg
+assets/css/images/bg*.png
+assets/css/images/icon-checkmark.png
+assets/css/images/button-*.svg
+assets/css/images/mobileUI-*.svg
+
+# Unused images
+images/banner.jpg
+images/pic*.jpg
+
+# Original CSS (replaced by modern.css)
+assets/css/main.css
+
+# Original JavaScript (removed from HTML)
+assets/js/jquery.min.js
+assets/js/browser.min.js
+assets/js/breakpoints.min.js
+assets/js/util.js
+assets/js/main.js
+
+# SASS source files (not needed for production)
+assets/sass/
+
+# Jekyll files (not needed for static HTML)
+_config.yml
+_site/
+.jekyll-cache/
+
+# Development files
+live_server.py
+simple_live_server.py
+start_dev_server.sh
+requirements.txt
+
+# Template files
+ABOUT_ME_TEMPLATE.md
+SEO_GUIDE.md
+
+# License and README from template
+LICENSE.txt
+README.txt
