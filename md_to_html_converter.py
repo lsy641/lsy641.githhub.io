@@ -582,6 +582,342 @@ def markdown_to_html(markdown_content, title="Document", author="Siyang Liu", do
     
     return html_doc
 
+def generate_html_content(markdown_content, title, description, keywords, author, paper_url=None, paper_title=None, paper_authors=None, paper_journal=None, paper_date=None, paper_doi=None):
+    """Generate complete HTML content with modern styling"""
+    
+    # Convert markdown to HTML
+    html_content = convert_markdown_to_html(markdown_content)
+    
+    # Generate current date for meta tags
+    current_date = datetime.now().strftime("%Y-%m-%dT%H:%M:%S+00:00")
+    
+    # Create filename for the note
+    note_filename = title.lower().replace(' ', '-').replace(':', '').replace('(', '').replace(')', '').replace(',', '').replace('.', '')
+    
+    # Generate HTML template with modern styling
+    html_template = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} - Research Notes | Siyang Liu | University of Michigan</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{description}" />
+    <meta name="keywords" content="{keywords}" />
+    <meta name="author" content="{author}" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="language" content="en" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="{title} - Research Notes | Siyang Liu" />
+    <meta property="og:description" content="{description}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://lsy641.github.io/notes/{note_filename}" />
+    <meta property="og:image" content="https://lsy641.github.io/images/profile.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{title} Research Notes" />
+    <meta property="og:site_name" content="Siyang Liu - Academic Website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:author" content="{author}" />
+    <meta property="article:published_time" content="{current_date}" />
+    <meta property="article:modified_time" content="{current_date}" />
+    <meta property="article:section" content="Research Notes" />
+    <meta property="article:tag" content="{keywords.split(', ')[:3]}" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{title}" />
+    <meta name="twitter:description" content="{description[:100]}..." />
+    <meta name="twitter:image" content="https://lsy641.github.io/images/profile.jpg" />
+    <meta name="twitter:creator" content="@liusiyang_641" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lsy641.github.io/notes/{note_filename}" />
+    
+    <!-- Academic Profile Links -->
+    <link rel="author" href="https://scholar.google.com/citations?user=2OjUAPUAAAAJ" />
+    
+    <!-- Navigation Links -->
+    <link rel="up" href="https://lsy641.github.io/research-notes" />
+    <link rel="home" href="https://lsy641.github.io/" />
+    
+    <!-- Structured Data for Article -->
+    <script type="application/ld+json">
+    {{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{title}",
+        "description": "{description}",
+        "image": "https://lsy641.github.io/images/profile.jpg",
+        "author": {{
+            "@type": "Person",
+            "name": "{author}",
+            "url": "https://lsy641.github.io/",
+            "jobTitle": "Ph.D. Student in Computer Engineering",
+            "worksFor": {{
+                "@type": "Organization",
+                "name": "University of Michigan"
+            }},
+            "sameAs": [
+                "https://scholar.google.com/citations?user=2OjUAPUAAAAJ"
+            ]
+        }},
+        "publisher": {{
+            "@type": "Organization",
+            "name": "Siyang Liu's Academic Website",
+            "url": "https://lsy641.github.io/"
+        }},
+        "datePublished": "{current_date}",
+        "dateModified": "{current_date}",
+        "mainEntityOfPage": {{
+            "@type": "WebPage",
+            "@id": "https://lsy641.github.io/notes/{note_filename}"
+        }},
+        "about": [
+            {{"@type": "Thing", "name": "Research Notes"}}, 
+            {{"@type": "Thing", "name": "Academic Analysis"}},
+            {{"@type": "Thing", "name": "Literature Review"}}
+        ],
+        "keywords": "{keywords}",
+        "articleSection": "Research Notes",
+        "inLanguage": "en",
+        "isPartOf": {{
+            "@type": "CollectionPage",
+            "name": "Research Notes",
+            "url": "https://lsy641.github.io/research-notes"
+        }}
+        {f', "mentions": [{{"@type": "ScholarlyArticle", "name": "{paper_title}", "url": "{paper_url}"}}]' if paper_url and paper_title else ''}
+    }}
+    </script>
+    
+    <!-- Additional Structured Data for Breadcrumb -->
+    <script type="application/ld+json">
+    {{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://lsy641.github.io/"
+            }},
+            {{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Research Notes",
+                "item": "https://lsy641.github.io/research-notes"
+            }},
+            {{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Reading Notes",
+                "item": "https://lsy641.github.io/notes/"
+            }}
+        ]
+    }}
+    </script>
+    
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f8f9fa;
+        }}
+        h1, h2, h3, h4, h5, h6 {{
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }}
+        h1 {{ font-size: 2.2em; border-bottom: 2px solid #3498db; padding-bottom: 10px; }}
+        h2 {{ font-size: 1.8em; border-bottom: 1px solid #bdc3c7; padding-bottom: 5px; }}
+        h3 {{ font-size: 1.4em; }}
+        h4 {{ font-size: 1.2em; }}
+        p {{ margin-bottom: 15px; }}
+        ul, ol {{ margin-bottom: 15px; padding-left: 30px; }}
+        li {{ margin-bottom: 5px; }}
+        
+        /* Nested list styling */
+        ul ul, ol ul, ul ol, ol ol {{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }}
+        
+        /* Make nested lists visually distinct */
+        li > ul, li > ol {{
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }}
+        
+        /* Style for list items with nested content */
+        li:has(ul), li:has(ol) {{
+            margin-bottom: 15px;
+        }}
+        code {{
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }}
+        pre {{
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }}
+        pre code {{
+            background: none;
+            padding: 0;
+        }}
+        blockquote {{
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #555;
+            font-style: italic;
+        }}
+        a {{
+            color: #3498db;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+        strong {{ font-weight: bold; }}
+        em {{ font-style: italic; }}
+        hr {{
+            border: none;
+            border-top: 1px solid #bdc3c7;
+            margin: 30px 0;
+        }}
+        .paper-meta {{
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }}
+        .note-info {{
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }}
+        .warning {{
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }}
+        .breadcrumb {{
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 0px;
+            font-size: 0.9em;
+        }}
+        .breadcrumb a {{
+            color: #666;
+        }}
+        .breadcrumb a:hover {{
+            color: #3498db;
+        }}
+        .navigation {{
+            margin: 0 0;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 0px solid #e9ecef;
+        }}
+        .navigation a {{
+            margin-right: 15px;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }}
+        .navigation a:hover {{
+            background-color: #2980b9;
+            transform: translateY(-1px);
+        }}
+        article {{
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            margin: 20px 0;
+        }}
+        header {{
+            margin-bottom: 30px;
+        }}
+        footer {{
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #666;
+        }}
+    </style>
+    
+</head>
+<body>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://lsy641.github.io/">Home</a> &gt; 
+        <a href="https://lsy641.github.io/research-notes">Research Notes</a> &gt; 
+        Reading Notes
+    </nav>
+
+    <!-- Navigation Links -->
+    <div class="navigation">
+        <a href="https://lsy641.github.io/">← Back to Home</a>
+        <a href="https://lsy641.github.io/research-notes">← Back to Research Notes</a>
+    </div>
+
+    <article>
+        <h2>{title}</h2>
+        
+        {f'''<h2>About the Paper</h2>
+
+<div class="paper-meta">
+    {f'<strong>Paper:</strong> <a href="{paper_url}" rel="noopener" target="_blank">{paper_title}</a><br>' if paper_url and paper_title else ''}
+    {f'<strong>Authors:</strong> {paper_authors}<br>' if paper_authors else ''}
+    {f'<strong>Journal:</strong> {paper_journal}<br>' if paper_journal else ''}
+    {f'<strong>Published:</strong> {paper_date}<br>' if paper_date else ''}
+    {f'<strong>DOI:</strong> <a href="https://doi.org/{paper_doi}" rel="noopener" target="_blank">{paper_doi}</a><br>' if paper_doi else ''}
+</div>''' if any([paper_url, paper_title, paper_authors, paper_journal, paper_date, paper_doi]) else ''}
+
+        {html_content}
+
+        <footer>
+            <hr>
+            <p><em>Notes by {author} - Last updated: {datetime.now().strftime("%B %d, %Y")}</em></p>
+            <p><strong>Author:</strong> <a href="https://lsy641.github.io/">{author}</a> | <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=2OjUAPUAAAAJ" rel="noopener" target="_blank">Profile</a></p>
+        </footer>
+    </article>
+</body>
+</html>'''
+    
+    return html_template
+
 def convert_file(input_file, output_file=None, title=None, author="Siyang Liu", domain="https://lsy641.github.io"):
     """Convert a markdown file to SEO-optimized HTML"""
     
@@ -603,8 +939,44 @@ def convert_file(input_file, output_file=None, title=None, author="Siyang Liu", 
         # Convert filename to title case
         title = title.replace('-', ' ').replace('_', ' ').title()
     
-    # Convert to HTML
-    html_content = markdown_to_html(markdown_content, title, author, domain)
+    # Extract paper information
+    paper_info = extract_paper_info(markdown_content)
+    
+    # Generate description from content
+    lines = markdown_content.split('\n')
+    description = ""
+    for line in lines:
+        if line.strip() and not line.startswith('#') and not line.startswith('**') and len(line.strip()) > 20:
+            description = line.strip()[:200] + "..." if len(line.strip()) > 200 else line.strip()
+            break
+    
+    # Generate keywords
+    keywords = "research notes, academic analysis, literature review, academic research"
+    if "ai" in markdown_content.lower():
+        keywords += ", artificial intelligence"
+    if "machine learning" in markdown_content.lower():
+        keywords += ", machine learning"
+    if "robotics" in markdown_content.lower():
+        keywords += ", robotics"
+    if "nlp" in markdown_content.lower() or "natural language" in markdown_content.lower():
+        keywords += ", natural language processing"
+    if "computer vision" in markdown_content.lower():
+        keywords += ", computer vision"
+    
+    # Use the new modern HTML generation function
+    html_content = generate_html_content(
+        markdown_content, 
+        title, 
+        description, 
+        keywords, 
+        author,
+        paper_info.get('url'),
+        paper_info.get('title'),
+        paper_info.get('authors'),
+        paper_info.get('journal'),
+        paper_info.get('date'),
+        paper_info.get('doi')
+    )
     
     # Write HTML file
     with open(output_file, 'w', encoding='utf-8') as f:

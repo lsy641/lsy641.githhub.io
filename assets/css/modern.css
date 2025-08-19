@@ -395,6 +395,22 @@ li {
     justify-content: flex-end;
 }
 
+/* CV Page Specific Styles - Simplified */
+.pdf-container {
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.pdf-viewer {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
 /* Compact Footer */
 #footer {
     background: #1a202c;
@@ -501,6 +517,11 @@ li {
     .social-links {
         justify-content: center;
     }
+    
+    /* Mobile CV layout */
+    .pdf-viewer {
+        height: 600px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -518,6 +539,10 @@ li {
     
     #content section {
         padding: 1rem;
+    }
+    
+    .pdf-viewer {
+        height: 500px;
     }
 }
 
@@ -563,6 +588,12 @@ li {
         background: #4a5568;
         color: #feb2b2;
     }
+    
+    /* Dark mode CV styles */
+    .pdf-container {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
 }
 
 /* Smooth animations */
@@ -596,5 +627,9 @@ select:focus {
         box-shadow: none;
         border: 1px solid #000;
         page-break-inside: avoid;
+    }
+    
+    .pdf-container {
+        display: none;
     }
 }
