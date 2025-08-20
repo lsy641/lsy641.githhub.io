@@ -87,21 +87,8 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <!-- Logo -->
-            <h1><a href="index.html" id="logo">Siyang Liu</a></h1>
-
-            <!-- Nav -->
-            <nav id="nav">
-                <a href="index.html">About Me</a>
-                <a href="research-notes.html">Research Notes</a>
-                <a href="cv.html" class="active">CV</a>
-                <a href="https://scholar.google.com/citations?user=2OjUAPUAAAAJ">Publications</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Header (included) -->
+    <div data-include-header></div>
 
     <!-- Main Content -->
     <main id="content">
@@ -125,6 +112,7 @@
     </main>
 
     <!-- Scripts -->
+    <script src="assets/js/include-header.js"></script>
     <script>
         // PDF viewer enhancement
         document.addEventListener('DOMContentLoaded', function() {
