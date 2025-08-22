@@ -10,11 +10,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		
 		<!-- SEO Meta Tags -->
-		<meta name="description" content="Siyang Liu - Ph.D. Student in Computer Engineering at University of Michigan. Research in AI agents, mental health AI systems, NLP, and human-computer interaction. Academic background, CV, publications, and research notes." />
+		<meta name="description" content="Siyang Liu - Ph.D. Student in Computer Engineering at University of Michigan. Research in AI agents, mental health AI systems, NLP, and human-computer interaction. Academic background, publications, and research notes." />
 		<meta name="keywords" content="Siyang Liu, AI agents, mental health AI, natural language processing, human-computer interaction, computer engineering, University of Michigan, Rada Mihalcea, emotional support dialogue systems, retrieval-augmented generation, large language model alignment" />
 		<meta name="author" content="Siyang Liu" />
 		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-		<meta name="language" content="en, zh" />
+		<meta name="language" content="en" />
 		<meta name="revisit-after" content="7 days" />
 		<meta name="distribution" content="global" />
 		<meta name="rating" content="general" />
@@ -28,7 +28,7 @@
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="Siyang Liu - AI Researcher" />
-		<meta property="og:site_name" content="Siyang Liu - Academic Personal Website" />
+		<meta property="og:site_name" content="Siyang Liu - Academic Website" />
 		<meta property="og:locale" content="en_US" />
 		
 		<!-- Twitter Card Meta Tags -->
@@ -110,21 +110,8 @@
 		</script>
 	</head>
 	<body>
-		<!-- Header -->
-		<header id="header">
-			<div class="container">
-				<!-- Logo -->
-				<h1><a href="/" id="logo">Siyang Liu (柳思杨)</a></h1>
-
-				<!-- Nav -->
-				<nav id="nav">
-					<a href="/" class="active">About Me</a>
-					<a href="/research-notes">Research Notes</a>
-					<a href="/cv">CV</a>
-					<a href="https://scholar.google.com/citations?user=2OjUAPUAAAAJ">Publications</a>
-				</nav>
-			</div>
-		</header>
+		<!-- Header (included) -->
+		<div data-include-header></div>
 
 			<!-- Main Content -->
 			<main id="content">
@@ -168,6 +155,39 @@
 						<p>
 							<strong>Email:</strong> lsiyang@umich.edu<br>
 						</p>
+					</section>
+
+					<!-- Recent Research Events -->
+					<section>
+						<header>
+							<h2>Events:</h2>
+						</header>
+						<div class="event-item">
+							<h3>Internship Project Presentation: "Simulating Participants: Experiencing Digital Assessments with Web Agents in Role"</h3>
+							<div class="event-meta">
+								<span class="event-date">July 2024</span>
+								<a href="https://docs.google.com/presentation/d/1vG18Ukk8CDL1C6h6x_pS06vBjGiW6xF-/edit?usp=sharing&ouid=112984824262973018537&rtpof=true&sd=true" class="event-link">View Slides →</a>
+							</div>
+							<p></p>
+						</div>
+						
+						<div class="event-item">
+							<h3>Talk: "AI: The Good, the Bad, and the Ugly"</h3>
+							<div class="event-meta">
+								<span class="event-date">April 8th, 2025</span>
+								<a href="https://eecs.engin.umich.edu/event/ai-the-good-the-bad-and-the-ugly-2/" class="event-link">Reservation →</a>
+							</div>
+							<p></p>
+						</div>
+						
+						<div class="event-item">
+							<h3>Co-organize: NLP @ Michigan Day</h3>
+							<div class="event-meta">
+								<span class="event-date">March 2025</span>
+								<a href="https://eecs.engin.umich.edu/event/nlp-michigan-day-2/" class="event-link">Details →</a>
+							</div>
+							<p></p>
+						</div>
 					</section>
 
 								<!-- Projects (Hidden for now) -->
@@ -307,6 +327,7 @@
 
 		<!-- Scripts -->
 		<!-- Removed unnecessary JavaScript files that were creating mobile navigation elements -->
+		<script src="assets/js/include-header.js"></script>
 
 	</body>
 </html>
